@@ -1,0 +1,2 @@
+# LicManagement
+基于Springboot的软件license管理系统
