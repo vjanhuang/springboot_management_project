@@ -14,6 +14,6 @@
 登录账号：admin1234
 登录密码：123456;其他数据表user里的account，password也可用
 #### 管理系统界面（主界面,有改动，但大致相同）
-![Image text](https://github.com/MmerungIndividual/LicManagement/raw/master/img/gongneng.png)
+![Image text](https://github.com/MmerungIndividual/LicManagement/raw/master/img/user.png)
 ## 结语
 本科期间太拉了，写这个小项目都很费力，希望未来研究生阶段能有所进展吧。陌生人，希望你提出意见和你的star，谢谢！
