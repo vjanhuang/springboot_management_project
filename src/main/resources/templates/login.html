@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<!-- Loding font -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:300,700" rel="stylesheet">
+
+<!-- Custom Styles -->
+<link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/default.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/demo.css}">
+<title>login</title>
+</head>
+<body th:style="'background-image: url(/images/bg-3.jpg)'">
+<div class="container" id="login">
+	  <div class="login">
+		<h1 style="color:#F5F5F5">license管理系统</h1>
+		  <p style="color:red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+		<!-- Loging form -->
+			  <form action="/main" method="post">
+				<div>
+				  <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter account">
+				</div>
+				<div>
+				  <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+				</div>
+				  <div style="text-align: center;">
+					  <div class="radio-box">
+						  <input type="radio" id="radio-1" name="role" checked value="1" />
+						  <label for="radio-1">用户</label>
+					  </div>
+					  <div class="radio-box">
+						  <input type="radio" id="radio-2" name="role" value="2" />
+						  <label for="radio-2">管理员</label>
+					  </div>
+				  </div>
+				<button type="submit" class="btn btn-lg btn-block btn-success">Sign in</button>
+			  </form>
+		 <!-- End Loging form -->
+	</div>
+	</div>
+<span style="font-family:arial;color:#C0D9D9" >Copyright &copy;2021 author:黄维坚</span>
+</body>
+</html>

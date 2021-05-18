@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <title>license表单</title>
+    <link rel="stylesheet" th:href="@{/css/pintuer.css}">
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/admin.css}">
+    <script th:src="@{/js/jquery.js}"></script>
+    <script th:src="@{/js/pintuer.js}"></script>
+</head>
+<body>
+<div class="panel admin-panel">
+    <div class="panel-head"><strong class="icon-reorder"> 内容列表</strong> <a href="" style="float:right; display:none;">添加字段</a></div>
+    <div class="padding border-bottom">
+        <h1><a class="btn btn-success" th:href="@{/view/add_license}">添加license信息</a> </h1>
+    </div>
+    <table class="table table-hover text-center">
+        <thead>
+        <tr>
+            <th>ID编号</th>
+            <th>license码</th>
+            <th>license版本号</th>
+            <th>价格</th>
+            <th>有效性</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr data-th-each="license : ${licenses}">
+            <td data-th-text="${license.id}"></td>
+            <td data-th-text="${license.license_code}"></td>
+            <td data-th-text="${license.license_version}"></td>
+            <td data-th-text="${license.license_price}"></td>
+            <td data-th-text="${license.validity==1?'有效':'无效'}"></td>
+            <td>
+                <a class="btn btn-primary" th:href="@{/view/update_license/}+${license.id}">编辑</a>
+                <a class="btn btn-danger" th:href="@{/deletelicense/}+${license.id}">删除</a>
+            </td>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

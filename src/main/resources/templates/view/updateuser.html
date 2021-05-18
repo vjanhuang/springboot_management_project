@@ -1,0 +1,74 @@
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+    <!--设置页面的宽度随着使用者的设备变化二变化 -->
+    <meta name="viewport" content="width=device-width,initial-scal=1">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 ">
+            <form class="form-horizontal" th:action="@{/updateuser}" method="post" >
+                    <!-- 每一个form-group都可以自定义布局-->
+                    <div class="form-group">
+                        <!-- label表示文字提示标签,可以通过表单的组建的id提示-->
+                        <label class="col-md-2 control-label">用户名字</label>
+                        <div class="col-md-4">
+                            <input class="form-control" id="user_name" name="user_name" type="text" th:value="${user.user_name}"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <!-- label表示文字提示标签,可以通过表单的组建的id提示-->
+                        <label class="col-md-2 control-label">邮箱</label>
+                        <div class="col-md-4">
+                            <input class="form-control" id="email" name="email" type="text" th:value="${user.email}"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <!-- label表示文字提示标签,可以通过表单的组建的id提示-->
+                        <label class="col-md-2 control-label">电话号码</label>
+                        <div class="col-md-4">
+                            <input class="form-control" id="phone_number" name="phone_number" type="text" th:value="${user.phone_number}"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">性别</label>
+                        <div class="col-md-5">
+                            <div class="radio-inline">
+                                <input type="radio" name="gender" value="1" th:checked="${user.gender==1}"/>男
+                            </div>
+                            <div class="radio-inline">
+                                <input type="radio" name="gender" value="0" th:checked="${user.gender==0}"/>女
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <!-- label表示文字提示标签,可以通过表单的组建的id提示-->
+                        <label class="col-md-2 control-label">账号</label>
+                        <div class="col-md-4">
+                            <input class="form-control" name="account" type="text" th:value="${user.account}"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <!-- label表示文字提示标签,可以通过表单的组建的id提示-->
+                        <label class="col-md-2 control-label">密码</label>
+                        <div class="col-md-4">
+                            <input class="form-control" name="password" type="text" th:value="${user.password}"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-6 col-md-offset-3">
+                            <input class="btn btn-primary" type="submit" value="修改"/>
+                            <input class="btn btn-warning" type="reset" value="重置"/>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <div>
+</body>
+</html>

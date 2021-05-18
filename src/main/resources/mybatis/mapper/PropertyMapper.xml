@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.huang_ms.mapper.PropertyMapper">
+    <select id="queryPropertyList" resultType="com.example.huang_ms.domain.Property">
+        SELECT * FROM property ORDER BY id ASC
+    </select>
+    <select id="queryPropertyById" parameterType="int" resultType="com.example.huang_ms.domain.Property">
+        SELECT * FROM property WHERE id = #{id}
+    </select>
+    <select id="queryLicenseCodeList" resultType="String">
+        SELECT license_code FROM license
+    </select>
+    <select id="queryProjectList" resultType="String">
+        SELECT project_name FROM project
+    </select>
+    <insert id="addProperty" useGeneratedKeys="true">
+        insert into property (license_code,mac_address,ip_address,project_name)
+        values(#{license_code},#{mac_address},#{ip_address},#{project_name})
+    </insert>
+    <delete id="deleteProperty">
+        delete from property where id = #{id}
+    </delete>
+</mapper>

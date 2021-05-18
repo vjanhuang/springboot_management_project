@@ -1,0 +1,41 @@
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+    <!--设置页面的宽度随着使用者的设备变化二变化 -->
+    <meta name="viewport" content="width=device-width,initial-scal=1">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 ">
+            <form class="form-horizontal" th:action="@{/updateproject}" method="post" >
+                <input th:value="${project.id}" type="hidden" class="form-control" name="id">
+                <div class="form-group">
+                    <!-- label表示文字提示标签,可以通过表单的组建的id提示-->
+                    <label class="col-md-2 control-label">项目名</label>
+                    <div class="col-md-4">
+                        <input class="form-control" name="project_name" type="text"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <!-- label表示文字提示标签,可以通过表单的组建的id提示-->
+                    <label class="col-md-2 control-label">注册时间</label>
+                    <div class="col-md-4">
+                        <input class="form-control" name="login_date" type="date"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-6 col-md-offset-3">
+                        <input class="btn btn-primary" type="submit" value="提交"/>
+                        <input class="btn btn-warning" type="reset" value="重置"/>
+                    </div>
+                </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <div>
+</body>
+</html>

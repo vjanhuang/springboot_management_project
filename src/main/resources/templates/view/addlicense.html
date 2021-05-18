@@ -1,0 +1,58 @@
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+    <!--设置页面的宽度随着使用者的设备变化二变化 -->
+    <meta name="viewport" content="width=device-width,initial-scal=1">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 ">
+            <form class="form-horizontal" th:action="@{/addlicense}" method="post" >
+                <div class="form-group">
+                    <!-- label表示文字提示标签,可以通过表单的组建的id提示-->
+                    <label class="col-md-2 control-label">license码</label>
+                    <div class="col-md-4">
+                        <input class="form-control" name="license_code" type="text"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <!-- label表示文字提示标签,可以通过表单的组建的id提示-->
+                    <label class="col-md-2 control-label">license版本号</label>
+                    <div class="col-md-4">
+                        <input class="form-control" name="license_version" type="text"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <!-- label表示文字提示标签,可以通过表单的组建的id提示-->
+                    <label class="col-md-2 control-label">价格</label>
+                    <div class="col-md-4">
+                        <input class="form-control" name="license_price" type="text"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">有效性</label>
+                    <div class="col-md-5">
+                        <div class="radio-inline">
+                            <input type="radio" name="validity" value="1"/>有效
+                        </div>
+                        <div class="radio-inline">
+                            <input type="radio" name="validity" value="0"/>无效
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-6 col-md-offset-3">
+                        <input class="btn btn-primary" type="submit" value="提交"/>
+                        <input class="btn btn-warning" type="reset" value="重置"/>
+                    </div>
+                </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <div>
+</body>
+</html>

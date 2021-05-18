@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <title>公司资产表单</title>
+    <link rel="stylesheet" th:href="@{/css/pintuer.css}">
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/admin.css}">
+    <script th:src="@{/js/jquery.js}"></script>
+    <script th:src="@{/js/pintuer.js}"></script>
+</head>
+<body>
+<div class="panel admin-panel">
+    <div class="panel-head"><strong class="icon-reorder"> 内容列表</strong> <a href="" style="float:right; display:none;">添加字段</a></div>
+    <div class="padding border-bottom">
+        <h1><a class="btn btn-success" th:href="@{/view/add_property}">添加使用信息</a> </h1>
+    </div>
+    <table class="table table-hover text-center">
+        <thead>
+        <tr>
+            <th>ID编号</th>
+            <th>license码</th>
+            <th>MAC地址</th>
+            <th>IP地址</th>
+            <th>项目名</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr data-th-each="property : ${properties}">
+            <td data-th-text="${property.id}"></td>
+            <td data-th-text="${property.license_code}"></td>
+            <td data-th-text="${property.mac_address}"></td>
+            <td data-th-text="${property.ip_address}"></td>
+            <td data-th-text="${property.project_name}"></td>
+            <td>
+                <a class="btn btn-danger" th:href="@{/deleteproperty/}+${property.id}">删除</a>
+            </td>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

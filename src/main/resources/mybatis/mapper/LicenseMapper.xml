@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.huang_ms.mapper.LicenseMapper">
+    <select id="queryLicenseList" resultType="com.example.huang_ms.domain.License">
+        SELECT * FROM license ORDER BY id ASC
+    </select>
+    <select id="queryLicenseById" parameterType="int" resultType="com.example.huang_ms.domain.License">
+        SELECT * FROM license WHERE id = #{id}
+    </select>
+    <insert id="addLicense" useGeneratedKeys="true" keyProperty="id">
+        insert into license (license_code,license_version,license_price,validity)
+        values (#{license_code},#{license_version},#{license_price},#{validity})
+    </insert>
+    <update id="updateLicense">
+        update license set
+        license_code = #{license_code},
+        license_price = #{license_price},
+        validity = #{validity}
+        where id = #{id}
+    </update>
+    <delete id="deleteLicense">
+        delete from license where id = #{id}
+    </delete>
+</mapper>
